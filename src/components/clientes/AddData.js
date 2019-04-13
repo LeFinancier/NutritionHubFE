@@ -22,7 +22,7 @@ class addData extends Component {
     const ejercicio = this.state.ejercicio
     const alergias = this.state.alergias
 
-    axios.post(`${process.env.REACT_APP_API_URL}/mis-datos`, {nombre, descripcionObjetivo, direccion, ejercicio, alergias}, {withCredentials:true})
+    axios.post("http://localhost:5000/api/mis-datos", {nombre, descripcionObjetivo, direccion, ejercicio, alergias}, {withCredentials:true})
       .then( () => {
         this.setState({
             nombre: "",

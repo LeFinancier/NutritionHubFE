@@ -57,7 +57,7 @@ class Consulta extends Component{
     
     const {params} = this.props.match
 
-    axios.put(`${process.env.REACT_APP_API_URL}/plan-nutricional/${params.id}`, {Dcarb, Denergia, Dproteinas, Dgrasas, Dcolaciones, Dcomentarios, Lcarb, Lenergia, Lproteinas, Lgrasas, Lcolaciones, Lcomentarios, Ccarb, Cenergia, Cproteinas, Cgrasas, Ccolaciones, Ccomentarios},{withCredentials: true})
+    axios.put(`http://localhost:5000/api/plan-nutricional/${params.id}`, {Dcarb, Denergia, Dproteinas, Dgrasas, Dcolaciones, Dcomentarios, Lcarb, Lenergia, Lproteinas, Lgrasas, Lcolaciones, Lcomentarios, Ccarb, Cenergia, Cproteinas, Cgrasas, Ccolaciones, Ccomentarios},{withCredentials: true})
       .then(() => {
         this.setState({
           Dcarbohidratos: 0,

@@ -83,7 +83,7 @@ class Pedido extends Component{
 
   getAllData = () => {
     const {params} = this.props.match
-    axios.get(`${process.env.REACT_APP_API_URL}/asignar-alimentos/${params.id}`, {withCredentials:true})
+    axios.get(`http://localhost:5000/api/asignar-alimentos/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         Comida: responseFromApi.data,
@@ -165,7 +165,7 @@ class Pedido extends Component{
     
     const {params} = this.props.match
 
-    axios.put(`${process.env.REACT_APP_API_URL}/asignar-alimentos/${params.id}`, {Ldesayuno, Lcomida, Lcena, Lentrega, Mdesayuno, Mcomida, Mcena, Mentrega,MCdesayuno, MCcomida, MCcena, MCentrega,Jdesayuno, Jcomida, Jcena, Jentrega,Vdesayuno, Vcomida, Vcena, Ventrega,Sdesayuno, Scomida, Scena, Sentrega,Ddesayuno, Dcomida, Dcena, Dentrega,},{withCredentials: true})
+    axios.put(`http://localhost:5000/api/asignar-alimentos/${params.id}`, {Ldesayuno, Lcomida, Lcena, Lentrega, Mdesayuno, Mcomida, Mcena, Mentrega,MCdesayuno, MCcomida, MCcena, MCentrega,Jdesayuno, Jcomida, Jcena, Jentrega,Vdesayuno, Vcomida, Vcena, Ventrega,Sdesayuno, Scomida, Scena, Sentrega,Ddesayuno, Dcomida, Dcena, Dentrega,},{withCredentials: true})
       .then(() => {
         this.getAllData();
       })

@@ -79,7 +79,7 @@ class SolicitudAlimientos extends Component{
     const cliente = this.props.user.loggedInUser.main[0]
     const {params} = this.props.match
 
-    axios.post(`${process.env.REACT_APP_API_URL}/solicitud/${params.id}`, {cliente, Ldesayuno, Lcomida, Lcena, Lvalidacion, Mdesayuno, Mcomida, Mcena, Mvalidacion, MCdesayuno, MCcomida, MCcena, MCvalidacion, Jdesayuno, Jcomida, Jcena, Jvalidacion, Vdesayuno, Vcomida, Vcena, Vvalidacion, Sdesayuno, Scomida, Scena, Svalidacion, Ddesayuno, Dcomida, Dcena, Dvalidacion}, {withCredentials:true})
+    axios.post(`http://localhost:5000/api/solicitud/${params.id}`, {cliente, Ldesayuno, Lcomida, Lcena, Lvalidacion, Mdesayuno, Mcomida, Mcena, Mvalidacion, MCdesayuno, MCcomida, MCcena, MCvalidacion, Jdesayuno, Jcomida, Jcena, Jvalidacion, Vdesayuno, Vcomida, Vcena, Vvalidacion, Sdesayuno, Scomida, Scena, Svalidacion, Ddesayuno, Dcomida, Dcena, Dvalidacion}, {withCredentials:true})
       .then( () => {
         this.setState({
           Ldesayuno: '',

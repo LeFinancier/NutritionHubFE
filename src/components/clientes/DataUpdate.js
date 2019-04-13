@@ -21,7 +21,7 @@ class DataUpdate extends Component {
 
   getSingle = () => {
     const {params} = this.props.match;
-    axios.get(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.get(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       const datos = responseFromApi.data;
       console.log(datos)
@@ -47,7 +47,7 @@ class DataUpdate extends Component {
     const alergias = this.state.alergias;
     const {params} = this.props.match
 
-    axios.put(`${process.env.REACT_APP_API_URL}/mis-datos/actualiza-info/${params.id}`, {nombre, descripcionObjetivo, direccion, ejercicio, alergias},{withCredentials: true})
+    axios.put(`http://localhost:5000/api/mis-datos/actualiza-info/${params.id}`, {nombre, descripcionObjetivo, direccion, ejercicio, alergias},{withCredentials: true})
       .then(() => {
         this.props.history.push('/mis-datos');
       })
@@ -58,7 +58,7 @@ class DataUpdate extends Component {
 
   deleteData = (id) => {
     const {params} = this.props.match;
-    axios.delete(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.delete(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       this.props.history.push('/mis-datos')
     })

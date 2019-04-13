@@ -28,7 +28,7 @@ class EditData extends Component {
     
       event.preventDefault();
 
-      axios.put(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${this.props.MyData._id}`, {username, password}, {withCredentials:true})
+      axios.put(`http://localhost:5000/api/mis-datos/usuario/${this.props.MyData._id}`, {username, password}, {withCredentials:true})
       .then ( () => {
         this.props.getData();
         this.props.history.push('/mis-datos');
@@ -40,7 +40,7 @@ class EditData extends Component {
     
       event.preventDefault();
 
-      axios.put(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${this.props.MyData._id}`, {username, password}, {withCredentials:true})
+      axios.put(`http://localhost:5000/api/mis-datos/usuario/${this.props.MyData._id}`, {username, password}, {withCredentials:true})
       .then ( () => {
         this.props.getData();
         this.props.history.push('/mis-datos');
@@ -53,7 +53,7 @@ class EditData extends Component {
       
       event.preventDefault();
 
-      axios.put(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${this.props.MyData._id}`, {username, password}, {withCredentials:true})
+      axios.put(`http://localhost:5000/api/mis-datos/usuario/${this.props.MyData._id}`, {username, password}, {withCredentials:true})
       .then ( () => {
         this.props.getData();
         this.props.history.push('/mis-datos');

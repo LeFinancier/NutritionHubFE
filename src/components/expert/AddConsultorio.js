@@ -61,7 +61,7 @@ class Data extends Component {
   
   getTabla = () => {
     const {params} = this.props.match;
-    axios.get(`${process.env.REACT_APP_API_URL}/mis-servicios/info/${params.id}`, {withCredentials: true})
+    axios.get(`http://localhost:5000/api/mis-servicios/info/${params.id}`, {withCredentials: true})
     .then(responseFromApi => {
       this.setState({
         tabla: responseFromApi.data.tabla
@@ -82,7 +82,7 @@ class Data extends Component {
     const tabla = this.data
     const {params} = this.props.match;
 
-    axios.post(`${process.env.REACT_APP_API_URL}/mis-servicios/info/${params.id}`, {nombre, cedula, titulo, descripcion, tabla},{withCredentials: true})
+    axios.post(`http://localhost:5000/api/mis-servicios/info/${params.id}`, {nombre, cedula, titulo, descripcion, tabla},{withCredentials: true})
       .then(() => {
         this.setState({
           nombre: '',
@@ -104,7 +104,7 @@ class Data extends Component {
     const {params} = this.props.match
     const id = params.id
 
-    axios.put(`${process.env.REACT_APP_API_URL}/mis-servicios/info/${params.id}`,{datos, id}, {withCredentials:true})
+    axios.put(`http://localhost:5000/api/mis-servicios/info/${params.id}`,{datos, id}, {withCredentials:true})
     .then ( () => {
       this.props.history.push('/mis-servicios');
     })
@@ -113,7 +113,7 @@ class Data extends Component {
 
   deleteData = (id) => {
     const {params} = this.props.match;
-    axios.delete(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.delete(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       this.props.history.push('/mis-datos')
     })
@@ -165,7 +165,7 @@ class Data extends Component {
     }
 
     const {TextArea} = Input
-
+    
     if(this.data.length === 0){
       this.addKey()}
 

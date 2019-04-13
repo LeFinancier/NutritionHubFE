@@ -14,7 +14,7 @@ class Perfil extends Component {
   }
 
   getAllData = () => {
-    axios.get(`${process.env.REACT_APP_API_URL}/mis-datos`, {withCredentials:true})
+    axios.get(`http://localhost:5000/api/mis-datos`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         MyData: responseFromApi.data

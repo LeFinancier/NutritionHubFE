@@ -28,7 +28,7 @@ class addWeight extends Component {
     const pecho = this.state.pecho
     const cliente = this.props.Data._id
 
-    axios.post("http://localhost:5000/api/mis-datos", {peso, estatura, grasa, musculo, agua, abdomen, pecho, cliente})
+    axios.post(`${process.env.REACT_APP_API_URL}/mis-datos`, {peso, estatura, grasa, musculo, agua, abdomen, pecho, cliente})
       .then( () => {
         this.setState({
           peso: 0,

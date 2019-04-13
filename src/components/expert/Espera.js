@@ -16,7 +16,7 @@ class Dashboard extends Component {
   }
 
   getAllData = () => {
-    axios.get(`http://localhost:5000/api/mis-servicios`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/mis-servicios`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         MyData: responseFromApi.data

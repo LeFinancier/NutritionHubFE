@@ -61,7 +61,7 @@ class App extends Component {
         <div className="App">
           <Navbar userInSession={this.state.loggedInUser} getUser={this.getTheUser}/>
             <Switch>
-              <Route exact path="/" component={Bienvenida}/>
+            
               <Route exact path="/mis-datos" component={Perfil} />
               <Route exact path="/mis-servicios" component={Espera}/>
               <Route exact path="/mi-cocina" component={Hostess}/>

@@ -17,7 +17,7 @@ class DataDetails extends Component {
 
   getSingle = () => {
     const {params} = this.props.match;
-    axios.get(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       const datos = responseFromApi.data;
       this.setState(datos);
@@ -37,7 +37,7 @@ class DataDetails extends Component {
 
   deleteData = (id) => {
     const {params} = this.props.match;
-    axios.delete(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.delete(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       this.props.history.push('/mis-datos')
     })

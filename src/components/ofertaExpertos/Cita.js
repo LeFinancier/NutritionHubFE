@@ -24,7 +24,7 @@ class Cita extends Component{
     const cliente = this.props.user.loggedInUser.main[0]
     const {params} = this.props.match
 
-    axios.post(`http://localhost:5000/api/cita/${params.id}`, {peso, grasa, musculo, abdomen, pecho, cliente}, {withCredentials:true})
+    axios.post(`${process.env.REACT_APP_API_URL}/cita/${params.id}`, {peso, grasa, musculo, abdomen, pecho, cliente}, {withCredentials:true})
       .then( () => {
         this.setState({
             peso: "",

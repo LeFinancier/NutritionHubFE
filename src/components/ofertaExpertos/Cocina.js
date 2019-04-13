@@ -12,7 +12,7 @@ class Cocina extends Component{
   }
 
   getAllData = () => {
-    axios.get(`http://localhost:5000/api/cocinas`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/cocinas`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         MyData: responseFromApi.data

@@ -12,7 +12,7 @@ class Oferta extends Component{
   }
 
   getAllData = () => {
-    axios.get(`http://localhost:5000/api/oferta`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/oferta`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         MyData: responseFromApi.data

@@ -14,7 +14,7 @@ class Host extends Component {
   }
 
   getAllData = () => {
-    axios.get(`http://localhost:5000/api/mi-cocina`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/mi-cocina`, {withCredentials:true})
     .then(responseFromApi => {
       this.setState({
         MyData: responseFromApi.data

@@ -26,7 +26,7 @@ class AddCocina extends Component {
     const condicionesEntrega = this.state.condicionesEntrega;
     const {params} = this.props.match;
 
-    axios.post(`http://localhost:5000/api/mi-cocina/info/${params.id}`, {nombre, direccion, condicionesEntrega, descripcion},{withCredentials: true})
+    axios.post(`${process.env.REACT_APP_API_URL}/mi-cocina/info/${params.id}`, {nombre, direccion, condicionesEntrega, descripcion},{withCredentials: true})
       .then(() => {
         this.setState({
           nombre: '',
@@ -48,7 +48,7 @@ class AddCocina extends Component {
     const {params} = this.props.match
     const id = params.id
 
-    axios.put(`http://localhost:5000/api/mi-cocina/info/${params.id}`,{datos, id}, {withCredentials:true})
+    axios.put(`${process.env.REACT_APP_API_URL}/mi-cocina/info/${params.id}`,{datos, id}, {withCredentials:true})
     .then ( () => {
       this.props.history.push('/mi-cocina');
     })
@@ -57,7 +57,7 @@ class AddCocina extends Component {
 
   deleteData = (id) => {
     const {params} = this.props.match;
-    axios.delete(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.delete(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       this.props.history.push('/mis-datos')
     })

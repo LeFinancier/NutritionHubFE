@@ -20,7 +20,7 @@ class UpdateCocina extends Component {
 
   getSingle = () => {
     const {params} = this.props.match;
-    axios.get(`http://localhost:5000/api/mi-cocina/actualiza-info/${params.id}`, {withCredentials:true})
+    axios.get(`${process.env.REACT_APP_API_URL}/mi-cocina/actualiza-info/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       const datos = responseFromApi.data;
       this.setState({
@@ -43,7 +43,7 @@ class UpdateCocina extends Component {
     const condicionesEntrega = this.state.condicionesEntrega;
     const {params} = this.props.match
 
-    axios.put(`http://localhost:5000/api/mi-cocina/actualiza-info/${params.id}`, {nombre, direccion, condicionesEntrega, descripcion},{withCredentials: true})
+    axios.put(`${process.env.REACT_APP_API_URL}/mi-cocina/actualiza-info/${params.id}`, {nombre, direccion, condicionesEntrega, descripcion},{withCredentials: true})
       .then(() => {
         this.props.history.push('/mi-cocina');
       })
@@ -54,7 +54,7 @@ class UpdateCocina extends Component {
 
   deleteData = (id) => {
     const {params} = this.props.match;
-    axios.delete(`http://localhost:5000/api/mis-datos/usuario/${params.id}`, {withCredentials:true})
+    axios.delete(`${process.env.REACT_APP_API_URL}/mis-datos/usuario/${params.id}`, {withCredentials:true})
     .then(responseFromApi => {
       this.props.history.push('/mis-datos')
     })
